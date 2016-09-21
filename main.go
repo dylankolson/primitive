@@ -82,6 +82,7 @@ func main() {
 
 	// read input image
 	primitive.Log(1, "reading %s\n", Input)
+	fmt.Println("Loading...")
 	input, err := primitive.LoadImage(Input)
 	check(err)
 
@@ -109,7 +110,7 @@ func main() {
 		model.Step()
 		elapsed := time.Since(start).Seconds()
 		primitive.Log(1, "iteration %d, time %.3f, score %.6f\n", i, elapsed, model.Score)
-		fmt.Println(i,"/",Number)
+		fmt.Println(i,"/",Number,"Elapsed Time: ",elapsed)
 
 		// write output image(s)
 		if saveFrames || i == Number {
@@ -119,6 +120,7 @@ func main() {
 			}
 			primitive.Log(1, "writing %s\n", path)
 			switch ext {
+				fmt.Println("Saving...")
 			default:
 				check(fmt.Errorf("unrecognized file extension: %s", ext))
 			case ".png":
