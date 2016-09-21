@@ -109,6 +109,7 @@ func main() {
 		model.Step()
 		elapsed := time.Since(start).Seconds()
 		primitive.Log(1, "iteration %d, time %.3f, score %.6f\n", i, elapsed, model.Score)
+		fmt.Println(i,"/",Number)
 
 		// write output image(s)
 		if saveFrames || i == Number {
