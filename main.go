@@ -119,8 +119,8 @@ func main() {
 				path = fmt.Sprintf(Output, i)
 			}
 			primitive.Log(1, "writing %s\n", path)
+			fmt.Println("Saving...")
 			switch ext {
-				fmt.Println("Saving...")
 			default:
 				check(fmt.Errorf("unrecognized file extension: %s", ext))
 			case ".png":
